@@ -208,8 +208,7 @@ def main():
                 lossClass1 = player[1]-1
                 lossClass2 = player[2]-1
 
-        if (~(((winClass1 == lossClass1) and (winClass2 == lossClass2)) or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
-
+        if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2)) or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
             matchupMatrix[winClass1][lossClass1][0] += 1
             matchupMatrix[winClass2][lossClass1][0] += 1
             matchupMatrix[winClass1][lossClass1][1] += 1
