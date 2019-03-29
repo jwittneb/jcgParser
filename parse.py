@@ -9,9 +9,40 @@ import sys
 datafile = open("data.txt", 'r')
 matrixfile = open("matrix.txt", "a+")
 
+########################################
+
+# Archetype information
+# This list contains a sequence of card hashes, the hash represents what entry it will be.
+# For example, only burn rune runs "orichalcum golem", so if the list is [5tre3,...] where "t4re3"
+# is the hash of orichalcum golem, then burn rune will be represented as the first row/column of the
+# matchup matrix, since it is the first entry of the archetype information list.
+
+# Also note that the ordering matters, for example, if every dragon deck plays card X, then card
+# X should be the last one in the list of dragon archetypes to cover generic dragon decks that dont
+# fall into any particular archetype predicted.
+
+#TODO: this could be made better with a ML algorithm to determine deck types
+
+archetypes = ["6a9vc","6iAby","6WkAy","6apPY","6ixQo","6bJ96","6XtQI","6jiFy","6YFqo","6Unvg","60COa","6cmfA"]
+
+#list containing (hash = card, archetype)
+#6a9vc = liza, forest
+#6iAby = johann, mech sword
+#6WkAy = latham, other sword
+#6apPY = owen, rune
+#6ixQo = forte, tempo dragon
+#6bJ96 = masamune, other dragon (probably satan)
+#6XtQI = ferry, shadow
+#6jiFy = mono, mech blood
+#6YFqo = vira, other blood (probably DFB)
+#6Unvg = tenko shrine, tenko
+#60COa = scripture, other haven
+#6cmfA = mechanization, artifact portal
+
 ############## CONSTANTS ###############
 
 numClasses = 8
+numArchetypes = len(archetypes)
 
 ########################################
 
@@ -30,15 +61,24 @@ def top256(dct):
 # Takes as input a list of participants
 # Returns a table with the participants name and the classes they played, each entry in of the form:
 # [playername, class1, class2, additional data]
+# TODO: make this more resistant to weird rogue decks
 def createTable(participants):
     table = []
     for player in participants:
         playerentry = [player['nm']]
         for deck in player['dk']:
-            playerentry.append(deck['cl'])
+            count = 0
+            for arch in archetypes:
+                print arch
+                print deck['hs']
+                if (deck['hs'].find(arch) != -1):
+                    playerentry.append(count)
+                    break
+                count += 1
         playerentry.append(0)
         playerentry.append(0)
-        table.append(playerentry)
+        if (len(playerentry) == 5):
+            table.append(playerentry)
     return table
 
 # Takes in a list of participants
@@ -150,9 +190,13 @@ def main():
     print_class_selection(participants)
 
     # Put this elsewhere probably
-    classSetWins = [0,0,0,0,0,0,0,0]
-    classSetLosses = [0,0,0,0,0,0,0,0]
-    top16 = [0,0,0,0,0,0,0,0]
+    classSetWins = []
+    classSetLosses = []
+    top16 = []
+    for i in range(numArchetypes):
+        classSetWins.append(0)
+        classSetLosses.append(0)
+        top16.append(0)
 
     # Make the table of players, entries are of the form: [Name, Class1, Class2, additional data1,
     # additional data2]
@@ -177,14 +221,13 @@ def main():
 
     #Move to separate function
     matchupMatrix = []
-    for i in range(8):
+    for i in range(numArchetypes):
         nextrow = []
-        for j in range(8):
+        for j in range(numArchetypes):
             nextrow.append([0,0])
         matchupMatrix.append(nextrow)
 
-    #NOTE: this fucks up with several players with the same name
-    #TODO: finish this function: see what class each players are playing, add to table
+    #NOTE: this fucks up with several players with the same name, I dont think there is any easy fix
     for match in matchTable:
         winner = -1
         loser = -1
@@ -231,9 +274,9 @@ def main():
             top16[player[2]-1] += 1
             print player[0]
 
-    winrateTable = [["Forest",0],["Sword",0],["Rune",0],["Dragon",0],["Shadow",0],["Blood",0],["Haven",0],["Portal",0]]
+    winrateTable = [["Forest",0],["Mech Sword",0],["midsword",0],["Rune",0],["tempo Drag",0],["satan Dragon",0],["Shadow",0],["mech blood",0],["DFB",0],["tenko",0],["Haven",0],["Portal",0]]
 
-    for i in range(8):
+    for i in range(numArchetypes):
         if (classSetWins[i]+classSetLosses[i] == 0):
             winrateTable[i][1] = 0
         else:
@@ -242,7 +285,7 @@ def main():
     winrateTable.sort(key = sortSecond)
 
     print "\nWinrates:"
-    for i in range(8):
+    for i in range(numArchetypes):
         print (winrateTable[i][0] + " = " + str(round(float(winrateTable[i][1]),4)))
 
     print "\nSets won by each class: "
@@ -252,7 +295,7 @@ def main():
     print "\nNumber of each class hitting top 16: "
     print top16
     print "\nMatchup Matrix:"
-    for i in range(8):
+    for i in range(numArchetypes):
         matrixfile.write(str(matchupMatrix[i]) + "\n")
         print matchupMatrix[i]
 

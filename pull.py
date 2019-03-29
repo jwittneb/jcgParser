@@ -10,7 +10,7 @@ def myPull(tourNum):
     f.write(r.text)
     f.close()
 
-    #there isnt a json file corresponding to this, codecs used to deal with non-ascii
+    #there isnt a json file corresponding to this, codecs is used to deal with non-ascii characters
     r = requests.get('https://sv.j-cg.com/compe/view/tour/' + sys.argv[1])
     with codecs.open("data.txt", "w", encoding='utf-8') as out:
         out.write(r.text)
