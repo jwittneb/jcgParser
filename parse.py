@@ -23,8 +23,8 @@ def sortSecond(val):
 def top256(dct):
     outputplayers = []
     for player in dct:
-        if player["te"]:
-            outputplayers.append(player)
+        #if player["te"]:
+        outputplayers.append(player)
     return outputplayers
 
 # Takes as input a list of participants
@@ -184,7 +184,6 @@ def main():
         matchupMatrix.append(nextrow)
 
     #NOTE: this fucks up with several players with the same name
-    #TODO: finish this function: see what class each players are playing, add to table
     for match in matchTable:
         winner = -1
         loser = -1
@@ -204,32 +203,33 @@ def main():
             if (match[winner] == player[0]):
                 winClass1 = player[1]-1
                 winClass2 = player[2]-1
+                if (winClass1 == 7 or winClass2 == 7):
+                    print player
             if (match[loser] == player[0]):
                 lossClass1 = player[1]-1
                 lossClass2 = player[2]-1
 
         if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2)) or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
-            matchupMatrix[winClass1][lossClass1][0] += 1
-            matchupMatrix[winClass2][lossClass1][0] += 1
-            matchupMatrix[winClass1][lossClass1][1] += 1
-            matchupMatrix[winClass2][lossClass1][1] += 1
+            if ((winClass1 >= 0) and (winClass2 >= 0)):
+                matchupMatrix[winClass1][lossClass1][0] += 1
+                matchupMatrix[winClass2][lossClass1][0] += 1
+                matchupMatrix[winClass1][lossClass1][1] += 1
+                matchupMatrix[winClass2][lossClass1][1] += 1
 
-            matchupMatrix[winClass1][lossClass2][0] += 1
-            matchupMatrix[winClass2][lossClass2][0] += 1
-            matchupMatrix[winClass1][lossClass2][1] += 1
-            matchupMatrix[winClass2][lossClass2][1] += 1
+                matchupMatrix[winClass1][lossClass2][0] += 1
+                matchupMatrix[winClass2][lossClass2][0] += 1
+                matchupMatrix[winClass1][lossClass2][1] += 1
+                matchupMatrix[winClass2][lossClass2][1] += 1
 
-            matchupMatrix[lossClass1][winClass1][1] += 1
-            matchupMatrix[lossClass1][winClass2][1] += 1
-            matchupMatrix[lossClass2][winClass1][1] += 1
-            matchupMatrix[lossClass2][winClass2][1] += 1
-
+                matchupMatrix[lossClass1][winClass1][1] += 1
+                matchupMatrix[lossClass1][winClass2][1] += 1
+                matchupMatrix[lossClass2][winClass1][1] += 1
+                matchupMatrix[lossClass2][winClass2][1] += 1
 
     for player in playerTable:
         if (player[3] == 4):
             top16[player[1]-1] += 1
             top16[player[2]-1] += 1
-            print player[0]
 
     winrateTable = [["Forest",0],["Sword",0],["Rune",0],["Dragon",0],["Shadow",0],["Blood",0],["Haven",0],["Portal",0]]
 
@@ -255,5 +255,6 @@ def main():
     for i in range(8):
         matrixfile.write(str(matchupMatrix[i]) + "\n")
         print matchupMatrix[i]
+
 
 main()
