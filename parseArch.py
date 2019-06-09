@@ -14,7 +14,14 @@ matrixfile = open("archmatrix.txt", "a+")
 numClasses = 8
 numArchetypes = 8
 
-archs = [["Aggro Forst","WxgDS"],...]
+#TODO: get these hash values
+archs = [["Forest",["XXXX"]],
+        ["Midsword", ["XXXX"]],
+        ["Spellboost", ["XXXX","YYYYY"]],
+        ["Burn", ["XXXX"]],
+
+        ["Generic", []]
+        ]
 
 ########################################
 
@@ -43,7 +50,7 @@ def getarch(hashval):
     return -1
 
 # Takes as input a list of participants
-# Returns a table with the participants name and the classes they played, each entry in of the form:
+# Returns a table with the participants name and the archetypes they played, each entry in of the form:
 # [playername, arch1, arch2, additional data]
 def createTable(participants):
     table = []
@@ -117,7 +124,7 @@ def getMatchEntry():
     else:
         return [player1, player2, 2]
 
-#creates a table of all the matches in data.txt (this doesnt currently include top 16).
+#creates a table of all the matches in data.txt by going through the html (this doesnt currently include top 16).
 def createMatchTable():
     matchTable = []
     nextline = datafile.readline()
@@ -154,7 +161,7 @@ def main():
         archSetLosses.append(0)
         top16.append(0)
 
-    # Make the table of players, entries are of the form: [Name, Class1, Class2, additional data1,
+    # Make the table of players, entries are of the form: [Name, Arch1, Arch2, additional data1,
     # additional data2]
     playerTable = createTable(participants)
 
@@ -168,18 +175,18 @@ def main():
         for player in playerTable:
             if ((match[winner] == player[0]) and (player[3] != 4) and (player[4] != 1)):
                 player[3] += 1
-                classSetWins[player[1]-1] += 1
-                classSetWins[player[2]-1] += 1
+                archSetWins[player[1]-1] += 1
+                archSetWins[player[2]-1] += 1
             if ((match[loser] == player[0]) and (player[3] != 4) and (player[4] != 1)):
                 player[4] += 1
-                classSetLosses[player[1]-1] += 1
-                classSetLosses[player[2]-1] += 1
+                archSetLosses[player[1]-1] += 1
+                archSetLosses[player[2]-1] += 1
 
     #Move to separate function
     matchupMatrix = []
-    for i in range(8):
+    for i in range(len(numArchs):
         nextrow = []
-        for j in range(8):
+        for j in range(numArchs):
             nextrow.append([0,0])
         matchupMatrix.append(nextrow)
 
@@ -203,8 +210,6 @@ def main():
             if (match[winner] == player[0]):
                 winClass1 = player[1]-1
                 winClass2 = player[2]-1
-                if (winClass1 == 7 or winClass2 == 7):
-                    print player
             if (match[loser] == player[0]):
                 lossClass1 = player[1]-1
                 lossClass2 = player[2]-1
@@ -237,10 +242,10 @@ def main():
         winrateTable.append([archs[i][0],0])
 
     for i in range(numArchs):
-        if (classSetWins[i]+classSetLosses[i] == 0):
+        if (archSetWins[i]+archSetLosses[i] == 0):
             winrateTable[i][1] = 0
         else:
-            winrateTable[i][1] = Fraction(classSetWins[i],classSetWins[i]+classSetLosses[i])
+            winrateTable[i][1] = Fraction(archSetWins[i],archSetWins[i]+archSetLosses[i])
 
     winrateTable.sort(key = sortSecond)
 
@@ -248,11 +253,11 @@ def main():
     for i in range(numArchs):
         print (winrateTable[i][0] + " = " + str(round(float(winrateTable[i][1]),4)))
 
-    print "\nSets won by each class: "
-    print classSetWins
-    print "\nSets lost by each class: "
-    print classSetLosses
-    print "\nNumber of each class hitting top 16: "
+    print "\nSets won by each archetype: "
+    print archSetWins
+    print "\nSets lost by each archetype: "
+    print archSetLosses
+    print "\nNumber of each archetype hitting top 16: "
     print top16
     print "\nMatchup Matrix:"
     for i in range(8):
