@@ -12,11 +12,18 @@ matrixfile = open("archmatrix.txt", "a+")
 ############## CONSTANTS ###############
 
 numClasses = 8
-numArchs = 2
+numArchs = 8
 
 #TODO: get these hash values
-archs = [["Midsword",["6WkAy"]],
-        ["Generic", []]
+archs = [
+        ["Forest", [".1."]],
+        ["Midsword", ["6WkAy"]],
+        ["Rune", [".3."]],
+        ["Dragon", [".4."]],
+        ["Shadow", [".5."]],
+        ["Blood", [".6."]],
+        ["Haven", [".7."]],
+        ["Portal", [".8."]],
         ]
 
 ########################################
@@ -169,12 +176,12 @@ def main():
         for player in playerTable:
             if ((match[winner] == player[0]) and (player[3] != 4) and (player[4] != 1)):
                 player[3] += 1
-                archSetWins[player[1]-1] += 1
-                archSetWins[player[2]-1] += 1
+                archSetWins[player[1]] += 1
+                archSetWins[player[2]] += 1
             if ((match[loser] == player[0]) and (player[3] != 4) and (player[4] != 1)):
                 player[4] += 1
-                archSetLosses[player[1]-1] += 1
-                archSetLosses[player[2]-1] += 1
+                archSetLosses[player[1]] += 1
+                archSetLosses[player[2]] += 1
 
     #Move to separate function
     matchupMatrix = []
@@ -202,11 +209,11 @@ def main():
 
         for player in playerTable:
             if (match[winner] == player[0]):
-                winClass1 = player[1]-1
-                winClass2 = player[2]-1
+                winClass1 = player[1]
+                winClass2 = player[2]
             if (match[loser] == player[0]):
-                lossClass1 = player[1]-1
-                lossClass2 = player[2]-1
+                lossClass1 = player[1]
+                lossClass2 = player[2]
 
         if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2)) or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
             if ((winClass1 >= 0) and (winClass2 >= 0)):
@@ -227,8 +234,8 @@ def main():
 
     for player in playerTable:
         if (player[3] == 4):
-            top16[player[1]-1] += 1
-            top16[player[2]-1] += 1
+            top16[player[1]] += 1
+            top16[player[2]] += 1
 
     winrateTable = []
 
