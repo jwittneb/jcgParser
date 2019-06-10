@@ -12,14 +12,10 @@ matrixfile = open("archmatrix.txt", "a+")
 ############## CONSTANTS ###############
 
 numClasses = 8
-numArchetypes = 8
+numArchs = 2
 
 #TODO: get these hash values
-archs = [["Forest",["XXXX"]],
-        ["Midsword", ["XXXX"]],
-        ["Spellboost", ["XXXX","YYYYY"]],
-        ["Burn", ["XXXX"]],
-
+archs = [["Midsword",["6WkAy"]],
         ["Generic", []]
         ]
 
@@ -33,19 +29,19 @@ def sortSecond(val):
 def top256(dct):
     outputplayers = []
     for player in dct:
-        #if player["te"]:
-        outputplayers.append(player)
+        if player["te"]:
+            outputplayers.append(player)
     return outputplayers
 
 def getarch(hashval):
     # Make sure that all the indicators are in the decklist we are looking at
-    for i in numArchs:
+    for i in range(numArchs):
         correct = 1
-        for ind in archs[arch][1]:
-            if (deck.find(ind) == -1):
+        for ind in archs[i][1]:
+            if (hashval.find(ind) == -1):
                 correct = 0
-            if (correct == 1):
-                return i
+        if (correct == 1):
+            return i
     #TODO: this indicates an error, fix it so that there are generic decks for each class
     return -1
 
@@ -57,7 +53,7 @@ def createTable(participants):
     for player in participants:
         playerentry = [player['nm']]
         for deck in player['dk']:
-            playerentry.append(getarch(deck))
+            playerentry.append(getarch(deck['hs']))
         playerentry.append(0)
         playerentry.append(0)
         table.append(playerentry)
@@ -67,13 +63,11 @@ def archetype_selection(participants, arch):
     output = 0
     for player in participants:
         for deck in player['dk']:
-            if (getarch(deck) == arch):
-                output += 1
-
+            if (getarch(deck['hs']) == arch):
                 output += 1
     return output
 
-def get_archetype_selection(participants, archnum):
+def get_archetype_selection(participants):
     output = []
     for i in range(len(archs)):
         num_of_i = archetype_selection(participants, i)
@@ -84,7 +78,7 @@ def print_arch_selection(participants):
     print "Number of Entrants for each archetype:"
     arch_distrib = get_archetype_selection(participants)
     for i in range(len(archs)):
-        print archs[i][0] + ": " + str(arch_distribution[i])
+        print archs[i][0] + ": " + str(arch_distrib[i])
 
 # this should only ever be called by createMatchTable(), it requires datafile to be at a specific
 # point to extract the result of the "next" match
@@ -156,7 +150,7 @@ def main():
     archSetWins = []
     archSetLosses = []
     top16 = []
-    for i in range(len(archs)):
+    for i in range(numArchs):
         archSetWins.append(0)
         archSetLosses.append(0)
         top16.append(0)
@@ -184,7 +178,7 @@ def main():
 
     #Move to separate function
     matchupMatrix = []
-    for i in range(len(numArchs):
+    for i in range(numArchs):
         nextrow = []
         for j in range(numArchs):
             nextrow.append([0,0])
@@ -260,7 +254,7 @@ def main():
     print "\nNumber of each archetype hitting top 16: "
     print top16
     print "\nMatchup Matrix:"
-    for i in range(8):
+    for i in range(numArchs):
         matrixfile.write(str(matchupMatrix[i]) + "\n")
         print matchupMatrix[i]
 
