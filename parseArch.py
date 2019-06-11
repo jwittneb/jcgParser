@@ -12,19 +12,30 @@ matrixfile = open("archmatrix.txt", "a+")
 ############## CONSTANTS ###############
 
 numClasses = 8
-numArchs = 8
+
+#6WkAy = Latham
+#6awkS = Raio
+#6jaxM = Mech Bat
+#6V5CM = Junk
+#6URhy = DFB
 
 #TODO: get these hash values
 archs = [
         ["Forest", [".1."]],
         ["Midsword", ["6WkAy"]],
-        ["Rune", [".3."]],
+        ["Spellboost", ["6awkS"]],
+        ["Burn", [".3."]],
         ["Dragon", [".4."]],
         ["Shadow", [".5."]],
-        ["Blood", [".6."]],
-        ["Haven", [".7."]],
+        ["Mech Blood", ["6jaxM"]],
+        ["DFB", ["6URhy"]],
+        ["Lion Haven", [".7."]],
+        ["Lishenna", ["6V5CM"]],
         ["Portal", [".8."]],
+        ["General", [""]]
         ]
+
+numArchs = len(archs)
 
 ########################################
 
@@ -50,6 +61,7 @@ def getarch(hashval):
         if (correct == 1):
             return i
     #TODO: this indicates an error, fix it so that there are generic decks for each class
+    print "ERROR"
     return -1
 
 # Takes as input a list of participants
@@ -263,7 +275,7 @@ def main():
     print "\nMatchup Matrix:"
     for i in range(numArchs):
         matrixfile.write(str(matchupMatrix[i]) + "\n")
-        print matchupMatrix[i]
+        print archs[i][0] + ": " + str(matchupMatrix[i])
 
 
 main()
