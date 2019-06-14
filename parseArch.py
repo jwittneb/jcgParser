@@ -3,6 +3,7 @@
 from fractions import Fraction
 import json
 import sys
+from archsMod import archs
 
 ############## GLOBAL BECAUSE FUCK #####
 
@@ -12,29 +13,7 @@ matrixfile = open("archmatrix.txt", "a+")
 ############## CONSTANTS ###############
 
 numClasses = 8
-
-#6WkAy = Latham
-#6awkS = Raio
-#6jaxM = Mech Bat
-#6V5CM = Junk
-#6URhy = DFB
-
-#TODO: get these hash values
-archs = [
-        ["Forest", [".1."]],
-        ["Midsword", ["6WkAy"]],
-        ["Spellboost", ["6awkS"]],
-        ["Burn", [".3."]],
-        ["Dragon", [".4."]],
-        ["Shadow", [".5."]],
-        ["Mech Blood", ["6jaxM"]],
-        ["DFB", ["6URhy"]],
-        ["Lion Haven", [".7."]],
-        ["Lishenna", ["6V5CM"]],
-        ["Portal", [".8."]],
-        ["General", [""]]
-        ]
-
+isTop16 = 0
 numArchs = len(archs)
 
 ########################################
@@ -62,7 +41,7 @@ def getarch(hashval):
             return i
     #TODO: this indicates an error, fix it so that there are generic decks for each class
     print "ERROR"
-    return -1
+    return 1000
 
 # Takes as input a list of participants
 # Returns a table with the participants name and the archetypes they played, each entry in of the form:
@@ -129,8 +108,8 @@ def getMatchEntry():
     player2 = helper[index1+1:index2]
 
     #making non-english characters work with playerTable
-    player1=player1.decode('utf-8')
-    player2=player2.decode('utf-8')
+    player1 = player1.decode('utf-8')
+    player2 = player2.decode('utf-8')
 
     if (isWinnerTwo < 0):
         return [player1, player2, 1]
@@ -161,6 +140,14 @@ def main():
     # Get the participants that actually played
     partic = data['participants']
     participants = top256(partic)
+
+    # If we are in the top 16, output all the decklists
+    if (len(participants) == 16):
+        for player in participants:
+            for deck in player['dk']:
+                print archs[getarch(deck['hs'])][0]
+                print "https://shadowverse-portal.com/deck/" + deck['hs']
+                isTop16 = 1
 
     # Output
     print_arch_selection(participants)
@@ -227,22 +214,26 @@ def main():
                 lossClass1 = player[1]
                 lossClass2 = player[2]
 
-        if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2)) or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
-            if ((winClass1 >= 0) and (winClass2 >= 0)):
-                matchupMatrix[winClass1][lossClass1][0] += 1
-                matchupMatrix[winClass2][lossClass1][0] += 1
-                matchupMatrix[winClass1][lossClass1][1] += 1
-                matchupMatrix[winClass2][lossClass1][1] += 1
+        if ((winClass1 == -1) or (winClass2 == -1) or (lossClass1 == -1) or (lossClass2 == -1)):
+            #something weird happened, the player decks werent found in the JSON
+            continue
 
-                matchupMatrix[winClass1][lossClass2][0] += 1
-                matchupMatrix[winClass2][lossClass2][0] += 1
-                matchupMatrix[winClass1][lossClass2][1] += 1
-                matchupMatrix[winClass2][lossClass2][1] += 1
+        if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2))
+                or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
+            matchupMatrix[winClass1][lossClass1][0] += 1
+            matchupMatrix[winClass2][lossClass1][0] += 1
+            matchupMatrix[winClass1][lossClass1][1] += 1
+            matchupMatrix[winClass2][lossClass1][1] += 1
 
-                matchupMatrix[lossClass1][winClass1][1] += 1
-                matchupMatrix[lossClass1][winClass2][1] += 1
-                matchupMatrix[lossClass2][winClass1][1] += 1
-                matchupMatrix[lossClass2][winClass2][1] += 1
+            matchupMatrix[winClass1][lossClass2][0] += 1
+            matchupMatrix[winClass2][lossClass2][0] += 1
+            matchupMatrix[winClass1][lossClass2][1] += 1
+            matchupMatrix[winClass2][lossClass2][1] += 1
+
+            matchupMatrix[lossClass1][winClass1][1] += 1
+            matchupMatrix[lossClass1][winClass2][1] += 1
+            matchupMatrix[lossClass2][winClass1][1] += 1
+            matchupMatrix[lossClass2][winClass2][1] += 1
 
     for player in playerTable:
         if (player[3] == 4):
