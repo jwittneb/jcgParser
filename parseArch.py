@@ -9,11 +9,11 @@ from archsMod import archs
 
 datafile = open("data.txt", 'r')
 matrixfile = open("archmatrix.txt", "a+")
+top16out = open("top16out.txt", "a+")
 
 ############## CONSTANTS ###############
 
 numClasses = 8
-isTop16 = 0
 numArchs = len(archs)
 
 ########################################
@@ -141,14 +141,6 @@ def main():
     partic = data['participants']
     participants = top256(partic)
 
-    # If we are in the top 16, output all the decklists
-    if (len(participants) == 16):
-        for player in participants:
-            for deck in player['dk']:
-                print archs[getarch(deck['hs'])][0]
-                print "https://shadowverse-portal.com/deck/" + deck['hs']
-                isTop16 = 1
-
     # Output
     print_arch_selection(participants)
 
@@ -252,6 +244,23 @@ def main():
             winrateTable[i][1] = Fraction(archSetWins[i],archSetWins[i]+archSetLosses[i])
 
     winrateTable.sort(key = sortSecond)
+
+    #TODO: this function is sloppily made
+
+    # If we are in the top 16, output all the decklists
+    if (len(participants) == 16):
+        wins = 0
+        while (wins < 5):
+            top16out.write("Wins: " + str(wins) + "\n")
+            for player in participants:
+                for playr in playerTable:
+                    if (player['nm'] == playr[0]):
+                        if (playr[3] == wins):
+                            for deck in player['dk']:
+                                top16out.write(archs[getarch(deck['hs'])][0] + "\n")
+                                top16out.write("https://shadowverse-portal.com/deck/" + deck['hs'] + "\n")
+            top16out.write("\n")
+            wins += 1
 
     print "\nWinrates:"
     for i in range(numArchs):
