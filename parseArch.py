@@ -49,6 +49,11 @@ def getarch(hashval):
 def createTable(participants):
     table = []
     for player in participants:
+        if len(player['dk']) == 0:
+            # This can occur if someone who didnt register in time (but still gets in from waitlist) makes top 16
+            # ignore this player for now, maybe try and fix it later, but it seems like a lot of
+            # work
+            continue
         playerentry = [player['nm']]
         for deck in player['dk']:
             playerentry.append(getarch(deck['hs']))
@@ -246,7 +251,6 @@ def main():
     winrateTable.sort(key = sortSecond)
 
     #TODO: this function is sloppily made
-
     # If we are in the top 16, output all the decklists
     if (len(participants) == 16):
         wins = 0
