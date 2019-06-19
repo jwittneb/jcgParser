@@ -5,7 +5,7 @@ import json
 import sys
 from archsMod import archs
 
-############## GLOBAL BECAUSE FUCK #####
+############## GLOBAL FILES ############
 
 datafile = open("data.txt", 'r')
 matrixfile = open("archmatrix.txt", "a+")
@@ -83,7 +83,7 @@ def print_arch_selection(participants):
     for i in range(len(archs)):
         print archs[i][0] + ": " + str(arch_distrib[i])
 
-# this should only ever be called by createMatchTable(), it requires datafile to be at a specific
+# This should only ever be called by createMatchTable(), it requires the datafile to be at a specific
 # point to extract the result of the "next" match
 # Match entries are of the form [Player1, Player2, Winner (either 1 or 2)]
 def getMatchEntry():
@@ -121,7 +121,7 @@ def getMatchEntry():
     else:
         return [player1, player2, 2]
 
-#creates a table of all the matches in data.txt by going through the html (this doesnt currently include top 16).
+# Returns a table of all the matches in data.txt by going through the html (this doesnt currently include top 16).
 def createMatchTable():
     matchTable = []
     nextline = datafile.readline()
@@ -135,40 +135,15 @@ def createMatchTable():
 
     return matchTable
 
-
-def main():
-    # Get the json that was pulled
-    jsonfile = open(sys.argv[1], 'r')
-    data = json.loads(jsonfile.readline())
-    jsonfile.close()
-
-    # Get the participants that actually played
-    partic = data['participants']
-    participants = top256(partic)
-
-    # Output
-    print_arch_selection(participants)
-
-    # Put this elsewhere probably
-    archSetWins = []
-    archSetLosses = []
-    top16 = []
-    for i in range(numArchs):
-        archSetWins.append(0)
-        archSetLosses.append(0)
-        top16.append(0)
-
-    # Make the table of players, entries are of the form: [Name, Arch1, Arch2, additional data1,
-    # additional data2]
-    playerTable = createTable(participants)
-
-    # Make the table of matches, entires are of the form: [Player1, Player2, Player1 wins, Player2 wins]
-    matchTable = createMatchTable()
-
-    # Move this to a separate function. This could be done in O(mlogn) by sorting the player table.
+# Cross-references playerTable and matchTable to determine the number of wins and losses for each
+# archetype.
+# Mutates archSetWins, archSetLosses, and playerTable. matchTable is kept constant
+def crossReference(playerTable, matchTable, archSetWins, archSetLosses):
     for match in matchTable:
+        # Get winner/loser from the current match
         winner = match[2]-1
         loser = match[2] % 2
+
         for player in playerTable:
             if ((match[winner] == player[0]) and (player[3] != 4) and (player[4] != 1)):
                 player[3] += 1
@@ -179,13 +154,47 @@ def main():
                 archSetLosses[player[1]] += 1
                 archSetLosses[player[2]] += 1
 
-    #Move to separate function
+def main():
+    # Initiating lists that will be used
+    archSetWins = []
+    archSetLosses = []
+    winrateTable = []
+    top16 = []
     matchupMatrix = []
+
     for i in range(numArchs):
+        archSetWins.append(0)
+        archSetLosses.append(0)
+        winrateTable.append([archs[i][0], 0])
+        top16.append(0)
         nextrow = []
         for j in range(numArchs):
             nextrow.append([0,0])
         matchupMatrix.append(nextrow)
+
+    # Get the json that was pulled
+    jsonfile = open(sys.argv[1], 'r')
+    data = json.loads(jsonfile.readline())
+    jsonfile.close()
+
+    # Get the participants that actually played
+    partic = data['participants']
+    participants = top256(partic)
+
+    # Printing the number of each archetype
+    print_arch_selection(participants)
+
+    # Make the table of players, entries are of the form: [Name, Arch1, Arch2, Number of Wins,
+    # Number of Losses]
+    # After this function call, the Number of Wins and Number of Losses are initially 0
+    playerTable = createTable(participants)
+
+    # Make the table of matches, entires are of the form: [Player1, Player2, Winner (either 1 or 2)]
+    matchTable = createMatchTable()
+
+    # Cross-reference playerTable and matchTable to determine the number of wins and losses for each
+    # archetype. Also updates the players with the number of wins/losses they achieved.
+    crossReference(playerTable, matchTable, archSetWins, archSetLosses)
 
     #NOTE: this fucks up with several players with the same name
     for match in matchTable:
@@ -237,16 +246,11 @@ def main():
             top16[player[1]] += 1
             top16[player[2]] += 1
 
-    winrateTable = []
-
     for i in range(numArchs):
-        winrateTable.append([archs[i][0],0])
-
-    for i in range(numArchs):
-        if (archSetWins[i]+archSetLosses[i] == 0):
+        if (archSetWins[i] + archSetLosses[i] == 0):
             winrateTable[i][1] = 0
         else:
-            winrateTable[i][1] = Fraction(archSetWins[i],archSetWins[i]+archSetLosses[i])
+            winrateTable[i][1] = Fraction(archSetWins[i], archSetWins[i] + archSetLosses[i])
 
     winrateTable.sort(key = sortSecond)
 
