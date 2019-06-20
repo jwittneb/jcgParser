@@ -154,6 +154,69 @@ def crossReference(playerTable, matchTable, archSetWins, archSetLosses):
                 archSetLosses[player[1]] += 1
                 archSetLosses[player[2]] += 1
 
+# Cross-references the playerTable and the matchTable in order to fill out the matchupMatrix.
+# matchupMatrix is mutated. playerTable and matchTable are kept constant
+def fillMatchupMatrix(matchupMatrix, playerTable, matchTable):
+    #NOTE: this fucks up with several players with the same name
+    for match in matchTable:
+        winner = -1
+        loser = -1
+        if (match[2] == 2):
+            winner = 1
+            loser = 0
+        else:
+            winner = 0
+            loser = 1
+
+        winClass1 = -1
+        winClass2 = -1
+        lossClass1 = -1
+        lossClass2 = -1
+
+        for player in playerTable:
+            if (match[winner] == player[0]):
+                winClass1 = player[1]
+                winClass2 = player[2]
+            if (match[loser] == player[0]):
+                lossClass1 = player[1]
+                lossClass2 = player[2]
+
+        if ((winClass1 == -1) or (winClass2 == -1) or (lossClass1 == -1) or (lossClass2 == -1)):
+            #something weird happened, the player decks werent found in the JSON
+            continue
+
+        if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2))
+            or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
+            matchupMatrix[winClass1][lossClass1][0] += 1
+            matchupMatrix[winClass2][lossClass1][0] += 1
+            matchupMatrix[winClass1][lossClass1][1] += 1
+            matchupMatrix[winClass2][lossClass1][1] += 1
+
+            matchupMatrix[winClass1][lossClass2][0] += 1
+            matchupMatrix[winClass2][lossClass2][0] += 1
+            matchupMatrix[winClass1][lossClass2][1] += 1
+            matchupMatrix[winClass2][lossClass2][1] += 1
+
+            matchupMatrix[lossClass1][winClass1][1] += 1
+            matchupMatrix[lossClass1][winClass2][1] += 1
+            matchupMatrix[lossClass2][winClass1][1] += 1
+            matchupMatrix[lossClass2][winClass2][1] += 1
+
+# Output links to all the decks used, along with how many wins they got while in the top 16.
+def printAllDecks():
+    wins = 0
+    while (wins < 5):
+        top16out.write("Wins: " + str(wins) + "\n")
+        for player in participants:
+            for playr in playerTable:
+                if (player['nm'] == playr[0]):
+                    if (playr[3] == wins):
+                        for deck in player['dk']:
+                            top16out.write(archs[getarch(deck['hs'])][0] + "\n")
+                            top16out.write("https://shadowverse-portal.com/deck/" + deck['hs'] + "\n")
+        top16out.write("\n")
+        wins += 1
+
 def main():
     # Initiating lists that will be used
     archSetWins = []
@@ -196,50 +259,8 @@ def main():
     # archetype. Also updates the players with the number of wins/losses they achieved.
     crossReference(playerTable, matchTable, archSetWins, archSetLosses)
 
-    #NOTE: this fucks up with several players with the same name
-    for match in matchTable:
-        winner = -1
-        loser = -1
-        if (match[2] == 2):
-            winner = 1
-            loser = 0
-        else:
-            winner = 0
-            loser = 1
-
-        winClass1 = -1
-        winClass2 = -1
-        lossClass1 = -1
-        lossClass2 = -1
-
-        for player in playerTable:
-            if (match[winner] == player[0]):
-                winClass1 = player[1]
-                winClass2 = player[2]
-            if (match[loser] == player[0]):
-                lossClass1 = player[1]
-                lossClass2 = player[2]
-
-        if ((winClass1 == -1) or (winClass2 == -1) or (lossClass1 == -1) or (lossClass2 == -1)):
-            #something weird happened, the player decks werent found in the JSON
-            continue
-
-        if (not (((winClass1 == lossClass1) and (winClass2 == lossClass2))
-                or ((winClass1 == lossClass2) and (winClass2 == lossClass1)))):
-            matchupMatrix[winClass1][lossClass1][0] += 1
-            matchupMatrix[winClass2][lossClass1][0] += 1
-            matchupMatrix[winClass1][lossClass1][1] += 1
-            matchupMatrix[winClass2][lossClass1][1] += 1
-
-            matchupMatrix[winClass1][lossClass2][0] += 1
-            matchupMatrix[winClass2][lossClass2][0] += 1
-            matchupMatrix[winClass1][lossClass2][1] += 1
-            matchupMatrix[winClass2][lossClass2][1] += 1
-
-            matchupMatrix[lossClass1][winClass1][1] += 1
-            matchupMatrix[lossClass1][winClass2][1] += 1
-            matchupMatrix[lossClass2][winClass1][1] += 1
-            matchupMatrix[lossClass2][winClass2][1] += 1
+    # Uses the playerTable and matchTable in order to fill out the matchup matrix.
+    fillMatchupMatrix(matchupMatrix, playerTable, matchTable)
 
     for player in playerTable:
         if (player[3] == 4):
@@ -254,21 +275,9 @@ def main():
 
     winrateTable.sort(key = sortSecond)
 
-    #TODO: this function is sloppily made
     # If we are in the top 16, output all the decklists
     if (len(participants) == 16):
-        wins = 0
-        while (wins < 5):
-            top16out.write("Wins: " + str(wins) + "\n")
-            for player in participants:
-                for playr in playerTable:
-                    if (player['nm'] == playr[0]):
-                        if (playr[3] == wins):
-                            for deck in player['dk']:
-                                top16out.write(archs[getarch(deck['hs'])][0] + "\n")
-                                top16out.write("https://shadowverse-portal.com/deck/" + deck['hs'] + "\n")
-            top16out.write("\n")
-            wins += 1
+        printAllDecks()
 
     print "\nWinrates:"
     for i in range(numArchs):
