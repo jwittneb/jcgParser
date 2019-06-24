@@ -25,7 +25,7 @@ def printMatrix(imat):
     for i in range(len(imat)):
         print imat[i]
 
-def initMat(imat):
+def initCombMat(imat):
     for i in range(len(archs)):
         comMatrix.append(0)
 
@@ -59,6 +59,4 @@ def printInfo(iMatrix):
     for i in range(len(winrates)):
         print (winrates[i][0] + " = " + str(round(float(winrates[i][1]),4)))
 
-initMat(comMatrix)
-comMatrix = collapseRows(comMatrix)
-printInfo(comMatrix)
+

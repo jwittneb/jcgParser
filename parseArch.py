@@ -236,7 +236,7 @@ def main():
         matchupMatrix.append(nextrow)
 
     # Get the json that was pulled
-    jsonfile = open(sys.argv[1], 'r')
+    jsonfile = open("entrylist.txt", 'r')
     data = json.loads(jsonfile.readline())
     jsonfile.close()
 
@@ -295,4 +295,4 @@ def main():
         print archs[i][0] + ": " + str(matchupMatrix[i])
 
 
-main()
+#main()
