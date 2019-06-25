@@ -4,6 +4,16 @@ import requests
 import sys
 import json
 import codecs
+import datetime
+from patchDates import *
+
+# Returns the patch that was active at the time of the input date
+def getPatch(date):
+    mostRecent = dates[0][1]
+    for day in dates:
+        if (day[0] < date):
+            mostRecent = day[1]
+    return mostRecent
 
 # Returns two lists; the first list are the tournaments starting with 256 entrants (sorted from newest to
 # oldest), the second list are the corresponding matches from the top 16 of the corresponding
@@ -23,13 +33,18 @@ def getRecent():
     while (nextline.find("</html>") == -1):
         if (nextline.find("competition commit") != -1):
             tourNum = nextline[52:56]
-            htmlfile.readline()
+            dateline = htmlfile.readline()
+            year = dateline[21:23]
+            month = dateline[24:26]
+            day = dateline[27:29]
+            tourdate = datetime.datetime(int("20" + year), int(month), int(day))
+            patch = getPatch(tourdate)
             htmlfile.readline()
             nextline = htmlfile.readline()
             if (nextline.find("トーナメント") != -1):
-                top16Tours.append(tourNum)
+                top16Tours.append([tourNum, patch])
             else:
-                groupTours.append(tourNum)
+                groupTours.append([tourNum, patch])
         nextline = htmlfile.readline()
 
     return [groupTours, top16Tours]
