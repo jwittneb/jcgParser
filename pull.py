@@ -15,13 +15,9 @@ def getPatch(date):
             mostRecent = day[1]
     return mostRecent
 
-# Returns two lists; the first list are the tournaments starting with 256 entrants (sorted from newest to
-# oldest), the second list are the corresponding matches from the top 16 of the corresponding
-# tournaments
-def getRecent():
-    # Pull the most recent rotation JCGs so that the user can determine the tour number without
-    # going to the JCG website
-    r = requests.get('https://sv.j-cg.com/compe/rotation')
+# Does most of the actual work of getRecent, and should only be called by that function.
+def getRecentFromLink(link):
+    r = requests.get(link)
     with codecs.open("tempjcg.txt", "w", encoding='utf-8') as out:
         out.write(r.text)
     htmlfile = open("tempjcg.txt", 'r')
@@ -48,6 +44,30 @@ def getRecent():
         nextline = htmlfile.readline()
 
     return [groupTours, top16Tours]
+
+
+# Writes the entrylist from the jcg with the input tournament number to "entrylist.txt"
+# Returns two lists; the first list are the tournaments starting with 256 entrants (sorted from newest to
+# oldest), the second list are the corresponding matches from the top 16 of the corresponding
+# tournaments
+def getRecent():
+    # Pull the most recent rotation JCGs so that the user can determine the tour number without
+    # going to the JCG website
+    # Page2 are the older tournament results
+    # This could probably be made into a single page pull
+    page2 = getRecentFromLink('https://sv.j-cg.com/compe/rotation?perpage=20&start=20')
+    page1 = getRecentFromLink('https://sv.j-cg.com/compe/rotation')
+
+    ret = page1
+
+    for tour in page2[0]:
+        ret[0].append(tour)
+
+    for tour in page2[1]:
+        ret[1].append(tour)
+
+    print ret
+    return ret
 
 
 # Writes the entrylist from the jcg with the input tournament number to "entrylist.txt"

@@ -11,6 +11,7 @@ fullResults = 0
 
 print "Would you like the full results from a specific patch?"
 
+
 print "Which JCG would you like the results from?"
 for i in range(len(mostRecent[0])):
     print str(i+1) + ": " + str(mostRecent[0][i][0]) + ": " + mostRecent[0][i][1]

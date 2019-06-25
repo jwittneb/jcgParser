@@ -6,6 +6,8 @@
 #6jJrc = col skull lord
 #6U3Hc = Arcus
 
+#TODO: make this so that its dependent on the selected expansion, so that it still works for past
+# expansions
 archs = [
         ["Forest", [".1."]],
         ["Midsword", ["6WkAy"]],
