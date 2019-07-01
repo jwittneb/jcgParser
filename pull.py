@@ -50,6 +50,8 @@ def getRecentFromLink(link):
 # Returns two lists; the first list are the tournaments starting with 256 entrants (sorted from newest to
 # oldest), the second list are the corresponding matches from the top 16 of the corresponding
 # tournaments
+# Output is a pair of lists, group round and top 16 rounds, respectively. Each list has entries of
+# the form ["tour number", "name of patch"]
 def getRecent():
     # Pull the most recent rotation JCGs so that the user can determine the tour number without
     # going to the JCG website
@@ -66,7 +68,6 @@ def getRecent():
     for tour in page2[1]:
         ret[1].append(tour)
 
-    print ret
     return ret
 
 
@@ -83,3 +84,5 @@ def jcgPull(tourNum):
     r = requests.get("https://sv.j-cg.com/compe/view/tour/" + tourNum)
     with codecs.open("data.txt", "w", encoding='utf-8') as out:
         out.write(r.text)
+
+#jcgPull(sys.argv[1])

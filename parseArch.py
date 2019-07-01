@@ -39,8 +39,8 @@ def getarch(hashval):
                 correct = 0
         if (correct == 1):
             return i
-    #TODO: this indicates an error, fix it so that there are generic decks for each class
-    print "ERROR"
+    # We should never get here
+    print "ERROR: deck does not qualify as any archetype"
     return 1000
 
 # Takes as input a list of participants
@@ -50,7 +50,7 @@ def createTable(participants):
     table = []
     for player in participants:
         if len(player['dk']) == 0:
-            # This can occur if someone who didnt register in time (but still gets in from waitlist) makes top 16
+            # This can occur if someone who didnt register their decks in time (but still gets in from waitlist) makes top 16
             # ignore this player for now, maybe try and fix it later, but it seems like a lot of
             # work
             continue
@@ -203,19 +203,19 @@ def fillMatchupMatrix(matchupMatrix, playerTable, matchTable):
             matchupMatrix[lossClass2][winClass2][1] += 1
 
 # Output links to all the decks used, along with how many wins they got while in the top 16.
-def printAllDecks():
-    wins = 0
-    while (wins < 5):
-        top16out.write("Wins: " + str(wins) + "\n")
+def printAllDecks(participants, playerTable):
+    wins = 4
+    while (wins > -1):
+        top16out.write("Wins: " + str(wins) + "\r\n")
         for player in participants:
             for playr in playerTable:
                 if (player['nm'] == playr[0]):
                     if (playr[3] == wins):
                         for deck in player['dk']:
-                            top16out.write(archs[getarch(deck['hs'])][0] + "\n")
-                            top16out.write("https://shadowverse-portal.com/deck/" + deck['hs'] + "\n")
-        top16out.write("\n")
-        wins += 1
+                            top16out.write(archs[getarch(deck['hs'])][0] + "\r\n")
+                            top16out.write("https://shadowverse-portal.com/deck/" + deck['hs'] + "\r\n")
+        top16out.write("\r\n")
+        wins -= 1
 
 def main():
     # Initiating lists that will be used
@@ -277,7 +277,7 @@ def main():
 
     # If we are in the top 16, output all the decklists
     if (len(participants) == 16):
-        printAllDecks()
+        printAllDecks(participants, playerTable)
 
     print "\nWinrates:"
     for i in range(numArchs):
