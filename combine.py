@@ -59,4 +59,6 @@ def printInfo(iMatrix):
     for i in range(len(winrates)):
         print (winrates[i][0] + " = " + str(round(float(winrates[i][1]),4)))
 
-
+#initCombMat(comMatrix)
+#comMatrix = collapseRows(comMatrix)
+#printInfo(comMatrix)
