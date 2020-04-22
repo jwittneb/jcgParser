@@ -2,6 +2,7 @@ from pull import *
 from parseArch import *
 from combine import *
 from patchDates import *
+import os
 
 mostRecent = getRecent()
 
@@ -22,7 +23,19 @@ if (uinput == "n"):
     jcgPull(mostRecent[0][uinput-1][0])
     main()
 elif (uinput == "y"):
-    print "Which patch would you like the full results from?"
+    exp = mostRecent[0][0][1]
+    i = 0
+    while (mostRecent[0][i][1] == exp):
+        for j in range(2):
+            print mostRecent[j][i][0]
+            jcgPull(mostRecent[j][i][0])
+            main()
+            os.remove("data.txt")
+            os.remove("entrylist.txt")
+        i += 1
+    initCombMat(comMatrix)
+    comMatrix = collapseRows(comMatrix)
+    printInfo(comMatrix)
 elif (uinput == "a"):
     jcgPull(mostRecent[0][0][0])
     main()

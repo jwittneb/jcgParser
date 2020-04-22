@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>JCG Shadowverse - ローテーション</title>
+
+<meta property="og:title" content="JCG Shadowverse">
+<meta property="og:type" content="Game">
+<meta property="og:url" content="https://sv.j-cg.com/">
+<meta property="og:site_name" content="JCG Shadowverse">
+<meta property="og:description" content="JCG Shadowverseは、Cygames社の提供する本格スマホカードバトル「Shadowverse」の大会サイトです。">
+<meta property="og:image" content="https://sv.j-cg.com/themes/jcg2/images/key-image.jpg?1227">
+
+<meta name="robots" content="index,follow" />
+<meta name="keywords" content="JCG,Japan Competitive Gaming, じぇーしーじー,ジェーシージー,ジャパンコンペティティブゲーミング,大会,Shadowverse, SV, Cygames, Grandblue fantasy, シャドウバース, TCG, OCG, Gostunv, iphone, android, Game, Japan, Japanese, Community, , matsujun, しゃどうばーす, サイゲームズ, グラブル, 攻略, コミュニティ, Wiki, 掲示板, サイト, ＰＣ, ゲーム,eスポーツ,e-sports,eSports, アイフォーン, Google" />
+<meta name="description" content="JCG Shadowverseは、Cygames社の提供する本格スマホカードバトル「Shadowverse」の大会サイトです。JCGはeスポーツの発展促進のトータルソリューションプロバイダーです。国内最大級オンラインゲーミング競技大会の開催運営、オフラインゲーミングイベントの企画運営、対戦プラットフォームの設計開発、プロ競技チーム人材の育成支援と国際ゲーミング大会との競技交流などを提供しています。" />
+<meta name="rating" content="general" />
+<meta name="author" content="JCG, Japan Competitive Gaming Copyright &copy; 2016-" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="https://sv.j-cg.com/xoops.css" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/style.css?2018080601" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/lol.css" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/style1.css" />
+<link rel="shortcut icon" type="image/x-icon" href="https://www.j-cg.com/favicon.ico" />
+<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="https://sv.j-cg.com/include/xoops.js"></script>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
+<script type="text/javascript"><!--
+google.load("language", "1"); 
+google.load("jquery", "1");
+google.load("jqueryui", "1");
+//-->
+</script>
+<link type="text/css" rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/modules/jcg_core/module.css?20130612" /><link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/modules/jcg_core/custom/module.css?20130612" /><script type="text/javascript" src="https://sv.j-cg.com/modules/jcg_core/module.js"></script><script type="text/javascript" src="https://sv.j-cg.com/modules/jcg_core/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/common.js"></script>
+<script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/jquery.lightbox-0.5.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/js/jquery.lightbox-0.5.css" />
+<script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/jquery.easing.js"></script>
+<!-- <script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/jquery.js"></script> -->
+<script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/script.js"></script>
+<script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/fadeimage.js"></script>
+<!-- <script type="text/javascript" src="https://sv.j-cg.com/themes/jcg2/js/jquery-1.7.2.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/modules.css" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/media-queries.css" />
+<link rel="stylesheet" type="text/css" href="https://sv.j-cg.com/themes/jcg2/photonavi.css" />
+<link href='//fonts.googleapis.com/css?family=Share:700' rel='stylesheet' type='text/css'>
+
+
+<script type="text/javascript">
+jQuery(function(){
+jQuery('a[href$=".jpg"], a[href$=".gif"], a[href$=".png"]')
+.addClass("lightbox");
+jQuery('a.lightbox').lightBox();
+});
+</script>
+</head>
+<body id="home" class="L1R0 ">
+	    <script type="text/javascript"
+            src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/themes/jcg/common/js/portal_header.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://d27qrxu4li1v3y.cloudfront.net/wp-content/themes/jcg/common/css/portal_header_xps.css?v5">
+    <header id="portal_header">
+        <div id="jcgp_navigation">
+            <ul class="navi">
+                <li class="navi_list portal"><a class="navi_btn" href="https://www.j-cg.com"><span
+                                class="icon">JCGポータル</span></a></li>
+                <li class="navi_list games">
+                    <div class="navi_btn" href="#"><span class="icon">GAMES<img
+                                    src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/themes/jcg/common/images/icon/arrow_bottom.png"></span>
+                    </div>
+                    <div class="downbox">
+                        <!-- .menu_listに col-XXで幅指定 最大12最小1 bootstrap方式 -->
+<ul class="down_menu">
+	<li class="menu_list col-6">
+		<p class="list_title">PC</p>
+		<ul class="game_title_2">
+			<li><a href="http://r6s.j-cg.com/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2018/05/r6s-2.png" alt="R6S PC"></a></li>
+                        <li><a href="https://sv.j-cg.com/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2018/05/sv.png" alt="SV"></a></li>
+<li><a href="http://pubg.j-cg.com/n/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2018/05/PUBG.png" alt="PUBG"></a></li>
+			<li><a href="http://lol.j-cg.com/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2018/05/lol.png" alt="LoL"></a></li>
+		</ul>
+	</li>
+	<li class="menu_list col-3">
+		<p class="list_title">PS4®</p>
+		<ul class="game_title">
+			<li><a href="http://rainbowsix-ps4.j-cg.com/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2018/05/r6s-2.png" alt="R6S PS4"></a></li>
+		
+		</ul>
+	</li>
+	<li class="menu_list col-3">
+		<p class="list_title">MOBILE</p>
+		<ul class="game_title">
+			<li><a href="https://sv.j-cg.com/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2018/05/sv.png" alt="SV"></a></li>
+		</ul>
+	</li>
+</ul>
+                        <div class="close"></div>
+                    </div>
+                </li>
+                <li class="navi_list events">
+                    <div class="navi_btn" href="#"><span class="icon">EVENTS<img
+                                    src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/themes/jcg/common/images/icon/arrow_bottom.png"></span>
+                    </div>
+                    <div class="downbox">
+                        <ul class="down_menu">
+                            <li class="event_list">
+
+                                                                    <ul class="event">
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://sv.j-cg.com/news/1418">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2020/04/dbe1ac4278f0c71ef52e9ae3c6235cef-e1586160131806.png"
+                                                                              title="JCG Shadowverse Open 13th Season 4月大会スケジュール"></p>
+                                                    <p class="event_title">JCG Shadowverse Open 13th Season 4月大会スケジュール                                                        <span>
+開催日：2020/4/1(水)～2020/4/29(水) ／ 開催中 ／「通常大会・ 優勝：JCG Open 優勝称号、レッドエーテル 30,000個 」「2Pick・優勝：JCG Open 優勝称…</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://galakurogaming-tournament.j-cg.com/codmw/news/20">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2019/11/b6ad0c2a3b8f68d7ddb5aa0d8adc7c14-scaled.png"
+                                                                              title="【PC版CoDMW大会】GALAKURO GAMING Tournament#3"></p>
+                                                    <p class="event_title">【PC版CoDMW大会】GALAKURO GAMING Tournament#3                                                        <span>
+ 開催日時：2020/4/26(日)※延期しました ／ エントリー受付中／ 主催:GALAKURO GAMING 
+</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://dbd.j-cg.com/news/25">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2019/12/8114d78b9852962accbc7f88afad8f96.png"
+                                                                              title="DFC Dead by Daylight大会 vol.6（PS4版）"></p>
+                                                    <p class="event_title">DFC Dead by Daylight大会 vol.6（PS4版）                                                        <span>
+ 開催日時:2020/4/24(土) 13:30～ / 優勝者にAmazonギフト2万円 /主催:DFC / エントリー準備中 
+</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://sv.j-cg.com/news/1430">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2020/04/dbe1ac4278f0c71ef52e9ae3c6235cef-e1586160131806.png"
+                                                                              title="JCG Shadowverse スイスドロー大会"></p>
+                                                    <p class="event_title">JCG Shadowverse スイスドロー大会                                                        <span>
+開催日：2020/4/11(土)、12(日)、18(土)、19(日) ／ 終了イベント ／「プレーオフ優勝：RAGE Shadowverse 2020 Summer Day2シード権、JCG Ope…</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://www.j-cg.com/news/2020-02-19/post-59071">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2020/02/200x200.png"
+                                                                              title="FISE HIROSHIMA 2020 Exhibition eSPORTS Battle"></p>
+                                                    <p class="event_title">FISE HIROSHIMA 2020 Exhibition eSPORTS Battle                                                        <span>
+ オンライン予選:2020年3月8日(日),2020年3月14日(土) ／オフライン予選・決勝： 未定(調整中) ／ 優勝賞金50万円 
+</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://sv.j-cg.com/news/1387">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2019/12/5af1102471055bf510d6fa0be0af99f1.png"
+                                                                              title="JCG Shadowverse Open 12th Season 3月大会スケジュール"></p>
+                                                    <p class="event_title">JCG Shadowverse Open 12th Season 3月大会スケジュール                                                        <span>
+  開催日：2020/3/2(月)～2020/3/29(日) ／ 終了イベント ／「通常大会・ 優勝：JCG Open 優勝称号、レッドエーテル 30,000個 」「2Pick・優勝：JCG Ope…</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://rainbow6.jp/pc/news/438">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2019/12/ae4f2ff574167d486e69da6ec865d6fb.png"
+                                                                              title="【PC版R6S大会】玄人志向杯#11"></p>
+                                                    <p class="event_title">【PC版R6S大会】玄人志向杯#11                                                        <span>
+開催日時:2020/3/28(土) 予選 第１回戦〜第５回戦 2020/3/29(日) 準々決勝、準決勝、決勝 ／ 終了イベント ／ 賞金総額100,000円 ／ 主催:玄人志向 協力:GALAX、…</span></p>
+                                                </a>
+                                            </li>
+                                        
+                                                                                        <li class="list">
+                                                <a href="https://rainbow6.jp/pro/news/390">
+                                                    <p class="game_icon"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2019/11/RB6_ProLeagueFull_Logo_Y4_Black-1.png"
+                                                                              title="ESL Rainbow Six Pro league Japan Season 11"></p>
+                                                    <p class="event_title">ESL Rainbow Six Pro league Japan Season 11                                                        <span>
+2020年1月8日(水)～3月26日(木) ／ Rainbow Six Pro league Japan Season 11 ／ 主催：ESL ／ 終了イベント
+</span></p>
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                
+                            </li>
+                        </ul>
+                        <div class="close"></div>
+
+                                                    <p class="more_btn"><a href="https://www.j-cg.com/events">全てのイベント</a></p>
+                        
+                    </div>
+                </li>
+                <li class="navi_list community">
+                    <div class="navi_btn" href="#"><span class="icon">COMMUNITY<img
+                                    src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/themes/jcg/common/images/icon/arrow_bottom.png"></span>
+                    </div>
+                    <div class="downbox">
+                        <ul class="down_menu">
+	<li class="menu_list">
+		<p class="list_title">国内コミュニティ</p>
+		<ul class="game_title">
+			<li><a href="https://dbd.j-cg.com/"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/uploads/2019/12/DFC_330_140.png" alt="DFC supported by JCG"></a></li>
+		</ul>
+	</li>
+</ul>
+                        <div class="close"></div>
+                    </div>
+                </li>
+                <li class="navi_list support"><a class="non_navi_btn" href="http://help.j-cg.com/"><span class="icon">HELP & SUPPORT</span></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="navToggle"><span></span><span></span><span></span></div>
+    <div id="menu_bg"></div>
+	<header id="header">
+        <div class="wrap">
+        </div>
+
+        			<div id="top-body">
+				<h1><img src="https://sv.j-cg.com/themes/jcg2/images/logo.jpg?v1" alt="JCG Shadowverse" usemap="#TOPBODYMAP" /></h1>
+				<MAP name="TOPBODYMAP">
+					<AREA shape="rect" coords="0,0,300,80" href="https://sv.j-cg.com" alt="JCG" />
+				</MAP>
+				<div id="headerSearch">
+					<form id="headerSearch-searchform" name="searchform" action="https://sv.j-cg.com/search.php" method="get" class="searchform">
+					<input id="headerSearch-keywords" type="text" name="query" placeholder="サイト内検索" class="textbox" />
+					<input type="hidden" name="action" value="results" />
+					<input type="submit" title="サイト内検索" id="headerSearch-searchBtn" value="" />
+					</form>
+				</div>
+			</div>
+                <div class="navi">
+            <nav class="clearfix main-menu"><ul>
+    <li><a class="link" href="/compe/">大会に参加する</a></li>
+    <li><a class="link" href="/modules/streaming/">大会を視聴する</a></li>
+    <li><a class="link" href="/category/1">ニュース</a></li>
+    <li><a class="link" href="/category/2">Shadowverse</a></li>
+    <li><a class="link" href="https://help.j-cg.com/">ヘルプ＆サポート</a></li>
+</ul></nav>
+        </div>
+	</header>
+
+	<div id="wrapper-content-body">
+	<div id="content-body">
+	<div id="wrapper-main-content" class="clearfix">
+	<div id="main-content">
+		<section class="center-col">
+									
+    <!-- BLOCK Center-Center -->
+    
+<!-- Module Content -->
+	<script>
+	function checkinConfirm2Pick(){
+        return confirm("トーナメント表公開後1回戦開始時刻までに、Discordで参加表明をお願いします。トーナメント表の名前と異なった名前での参加表明は無効となります。");
+	}
+</script>
+
+<link href='//fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+<div id="jcgcore_wrap">
+	<article id="jcgcore_body">
+				<div class="jcgcore_content no-bottom clearfix">
+			<div id="jcgcore_category_menu" class="clearfix">
+				<h1 class="jcgcore-h1">
+					<a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/rotation">
+					<span style="float:left;margin-right:5px;"><img height="32" src="https://sv.j-cg.com/modules/jcg_core/images/open_64x64.png" /></span>
+					<span style="line-height:32px;font-size:18px;">ローテーション</span>
+					</a>
+				</h1>
+				<ul>
+					<li><a class="link-nodeco link-white" href="https://sv.j-cg.com/compe/rotation">大会一覧</a></li>
+					<li><a class="link-nodeco link-white" href="https://sv.j-cg.com/compe/rotation/regulation">参加条件</a></li>
+					<li><a class="link-nodeco link-white" href="https://sv.j-cg.com/compe/rotation/description">概 要</a></li>
+														</ul>
+			</div>
+		</div>
+						
+								
+<div id="jcgcore_content_wrap">
+		
+	<div class="jcgcore_content clearfix">
+		<div id="competition_list_wrap" class="clearfix">
+		<table id="competition_list">
+		<thead>
+		<tr>
+			<td class="date">開催日時</td>
+			<td class="name" colspan="2">大会名</td>
+			<td class="status">ステータス</td>
+		</tr>
+		</thead>
+		<tbody>
+
+					<tr class="competition " competition_id="2132">
+				<td class="date">20/04/26(日) 16:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2132"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.16</span> <span class="nobr">4月26日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">準備中</td>
+			</tr>
+					<tr class="competition " competition_id="2128">
+				<td class="date">20/04/24(金) 18:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2128"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.14</span> <span class="nobr">4月24日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">参加受付中</td>
+			</tr>
+					<tr class="competition " competition_id="2127">
+				<td class="date">20/04/22(水) 18:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2127"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.13</span> <span class="nobr">4月22日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">参加受付中</td>
+			</tr>
+					<tr class="competition commit" competition_id="2156">
+				<td class="date">20/04/19(日) 19:30</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2156"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.12</span> <span class="nobr">4月19日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2126">
+				<td class="date">20/04/19(日) 16:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2126"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.12</span> <span class="nobr">4月19日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2152">
+				<td class="date">20/04/17(金) 21:40</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2152"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.10</span> <span class="nobr">4月17日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2122">
+				<td class="date">20/04/17(金) 18:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2122"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.10</span> <span class="nobr">4月17日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2149">
+				<td class="date">20/04/12(日) 16:30</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2149"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.8</span> <span class="nobr">4月12日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2119">
+				<td class="date">20/04/12(日) 13:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2119"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.8</span> <span class="nobr">4月12日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2148">
+				<td class="date">20/04/11(土) 19:50</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2148"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.7</span> <span class="nobr">4月11日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2118">
+				<td class="date">20/04/11(土) 16:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2118"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.7</span> <span class="nobr">4月11日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2146">
+				<td class="date">20/04/10(金) 21:40</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2146"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.6</span> <span class="nobr">4月10日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2116">
+				<td class="date">20/04/10(金) 18:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2116"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.6</span> <span class="nobr">4月10日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2141">
+				<td class="date">20/04/05(日) 16:50</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2141"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.4</span> <span class="nobr">4月5日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2113">
+				<td class="date">20/04/05(日) 13:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2113"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.4</span> <span class="nobr">4月5日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2140">
+				<td class="date">20/04/04(土) 19:50</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2140"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.3</span> <span class="nobr">4月4日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2112">
+				<td class="date">20/04/04(土) 16:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2112"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.3</span> <span class="nobr">4月4日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2137">
+				<td class="date">20/04/01(水) 21:40</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2137"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.1</span> <span class="nobr">4月1日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2109">
+				<td class="date">20/04/01(水) 18:00</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2109"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">13th</span> <span class="nobr">Season</span> <span class="nobr">Vol.1</span> <span class="nobr">4月1日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">グループ予選</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+					<tr class="competition commit" competition_id="2106">
+				<td class="date">20/03/28(土) 19:50</td>
+				<td class="image"><img src="https://sv.j-cg.com/modules/jcg_core/images/open_24x24.png"></td>
+				<td class="name"><a class="link-nodeco link-black" href="https://sv.j-cg.com/compe/2106"><span class="nobr">JCG</span> <span class="nobr">Shadowverse</span> <span class="nobr">Open</span> <span class="nobr">12th</span> <span class="nobr">Season</span> <span class="nobr">Vol.54</span> <span class="nobr">3月28日</span> <span class="nobr">ローテーション大会</span> <span class="nobr">決勝トーナメント</span> </a></td>
+				<td class="status">終了</td>
+			</tr>
+				</tbody>
+		</table>
+		</div>
+		<div class="xoops-pagenavi"><strong>(1)</strong> <a href='?perpage=20&amp;start=20'>2</a> <a href='?perpage=20&amp;start=40'>3</a> <a href='?perpage=20&amp;start=60'>4</a> ... <a href='?perpage=20&amp;start=580'>30</a> <a href='?perpage=20&amp;start=20'>&raquo;</a></div>
+			</div>
+</div>
+</article>
+</div><script>
+
+jQuery(".competition").click(function(){ 
+	$id = jQuery(this).attr('competition_id');
+	location.href='https://sv.j-cg.com/compe/'+$id;
+});
+</script>
+		</section> <!-- END Left Column -->
+		<div class="right-col">
+					</div>
+	</div><!-- end:main-content -->
+	<aside class="left-col">
+											<div  class="noborder">
+											<p style="text-align: center;"><a href="/news/5"><img width="200" src="/modules/jcg_core/images/tutorial.png" alt="" /></a></p><!--ckeditor4FlgSource-->
+			</div>
+									<div  class="noborder">
+											<div id="jc-cate-menu-wrap">
+	<ul>
+<!--
+		<li class="master"><a href="https://sv.j-cg.com/compe/master">
+			<img src="https://sv.j-cg.com/modules/jcg_core/images/master50.jpg" alt="JCG Master" />
+							<span>準備中</span>
+					</a></li>
+-->
+		<li style="margin-bottom: 5px;" class="rotation"><a href="https://sv.j-cg.com/compe/rotation">
+			<img src="https://sv.j-cg.com/modules/jcg_core/images/rotation50.png" alt="JCG Open ローテーション" width="200"/>
+							<span>4/22(水) 18:00 開催</span>
+						</a>
+		</li>
+		<li style="margin-bottom: 15px;">
+			<a target="_blank" href="https://discord.gg/mqGYNSF"><img width="200" src="/modules/jcg_core/images/Discord-rotation.png" alt="DISCORD JCG ROTATION"></a>
+		</li>
+		<li style="margin-bottom: 5px;" class="unlimited"><a href="https://sv.j-cg.com/compe/unlimited">
+			<img src="https://sv.j-cg.com/modules/jcg_core/images/unlimited50.png" alt="JCG Open アンリミテッド"  width="200"/>
+							<span>4/25(土) 13:00 開催</span>
+						</a>
+		</li>
+		<li style="margin-bottom: 15px;">
+			<a target="_blank" href="https://discord.gg/QDv3U7j"><img width="200" src="/modules/jcg_core/images/Discord-unlimited.png" alt="DISCORD JCG UNLIMITED"></a>
+		</li>
+		<li style="margin-bottom: 5px;" class="2pick"><a href="https://sv.j-cg.com/compe/2pick">
+			<img src="https://sv.j-cg.com/modules/jcg_core/images/2pick50.png" alt="JCG Open 2Pick"  width="200"/>
+							<span>4/25(土) 16:00 開催</span>
+						</a>
+		</li>
+		<li style="margin-bottom: 0px;">
+			<a target="_blank" href="https://discord.gg/SEZmVSJ"><img width="200" src="/modules/jcg_core/images/Discord-2Pick.png" alt="DISCORD JCG 2Pick"></a>
+		</li>
+
+
+	</ul>
+</div>
+			</div>
+									<div  class="noborder">
+											<div id="clc_menu_wrap">
+	<form action="https://account2.j-cg.com/user.php" method="get">
+	<input type="hidden" name="ret" value="https://sv.j-cg.com" />
+	<input type="hidden" name="op" value="glogin" />
+	<input type="image" src="https://sv.j-cg.com/modules/CommonLoginClient/images/usermenu_login.png" value="ログイン"/>
+	</form>
+	<form action="https://account2.j-cg.com/register.php" method="get">
+	<input type="hidden" name="ret" value="https://sv.j-cg.com" />
+	<input type="image" src="https://sv.j-cg.com/modules/CommonLoginClient/images/usermenu_create_account.png" value="ログイン"/>
+	</form>
+
+</div>
+			</div>
+									<div  class="noborder">
+											<a href="https://shadowverse.jp/" target="_blank"><img src="/modules/jcg_core/images/glossy2.png" alt="Shadowverse official" /></a>
+<a href="https://shadowverse-portal.com/" target="_blank"><img src="/modules/jcg_core/images/glossy.png" alt="Shadowverse-portal" /></a>
+<a href="http://sv.rampagebattle.com/" target="_blank"><img src="https://sv.j-cg.com/themes/jcg2/images/rb_banner.png" alt="Shadowverse Rampage Battle" /></a>
+<a href="https://sv.j-cg.com/news/5" target="_blank"><img src="https://sv.j-cg.com/themes/jcg2/images/tutorial_mokou.png" alt="JCG Open 大会参加手順" /></a>
+<a href="https://sv.j-cg.com/compe/opena"><img width="200" src="/modules/jcg_core/images/h-opena50.png" alt=""></a>
+<a href="https://sv.j-cg.com/compe/openb"><img width="200" src="/modules/jcg_core/images/h-openb50.png" alt=""></a>
+<!--ckeditor4FlgSource-->
+			</div>
+					
+	</aside>
+
+<!-- フッター部分
+	<footer class="clearfix">
+		<ul class="link clearfix">
+			<li><a href="http://www.j-cg.com/privacy.html">プライバシーポリシー</a></li>
+		</ul>
+		<p class="copyright">©Cygames, Inc.</p>
+
+	</footer>
+-->
+
+	</div><!-- end:wrapper-main-content -->
+	</div><!-- end:content-body -->
+	</div><!-- end:wrapper-content-body -->
+	<div id="xugj_pm_new_message" class="top-right"></div>
+
+ <style> #wrapper-main-content { margin-bottom: 5px; padding-bottom: 30px; border-bottom: 1px solid #E64A0A; } #jcg_common_footer * { list-style: none; margin: 0; padding: 0; text-decoration: none; box-sizing: border-box; } #jcg_common_footer { width: 100%; background: #252525; font-size: 14px; margin: 0; padding: 0; } #jcg_common_footer .footerbody { margin: 0 auto; padding: 20px 0 40px 0; width: 980px; } #jcg_common_footer .footerbody .footerlink { padding: 10px 10px; width: 60%; float: left; flex-wrap: wrap; } #jcg_common_footer .footerbody .footerlink li { /*margin: 30px 40px 0 0;*/ padding: 10px; margin-bottom: 10px; display: inline-block; } #jcg_common_footer .footerbody .footerlink a { padding-bottom: 5px; min-width: 140px; font-size: 0.9em; border-bottom: 1px solid #fff; display: block; color: #fff; } #jcg_common_footer .footerbody .footerlogo { padding: 10px 10px; width: 40%; text-align: right; float: right; } #jcg_common_footer .footerbody .footerlogo .jcglogo { text-align: right; margin-bottom: 1em; } #jcg_common_footer .footerbody .footerlogo .jcglogo img { width: 180px; } #jcg_common_footer .footerbody .footerlogo .copy { margin-top: 20px; font-size: 13px; color: #fff; text-align: right; } #jcg_common_footer .footerbody:after { display: block; clear: both; content: ""; } </style> <script> (function ($) { $(function () { $('#jcg_common_footer_copyright').each(function () { console.log(this); $('.jcg_common_footer_copyright').empty(); $(this).appendTo('.jcg_common_footer_copyright'); }) }) })(jQuery); </script> <footer id="jcg_common_footer"> <div class="footerbody" class="cf"> <ul class="footerlink"><li><a href="https://www.jcg.co.jp/">運営会社</a></li><li><a href="https://www.j-cg.com/policy">運営ポリシー</a></li><li><a href="https://www.j-cg.com/anti-cheat-policy">アンチチートポリシー</a></li><li><a href="https://www.jcg.co.jp/privacy-policy/">プライバシーポリシー</a></li><li><a href="https://help.j-cg.com/">HELP &#038; SUPPORT</a></li><li><a href="https://www.jcg.co.jp/recruit.html">スタッフ・正社員募集</a></li><li><a href="https://www.j-cg.com/pressrelease">プレスリリース送付窓口</a></li></ul> <div class="footerlogo"> <div class="jcglogo"><img src="https://d27qrxu4li1v3y.cloudfront.net/wp-content/themes/jcg/common/images/jcg_logo.png?v1" alt="JCG"></div> <small class="copy jcg_common_footer_copyright">@ 2013-2020 JCG All Rights Reserved. </small> </div> </div> </footer><div id="jcg_common_footer_copyright">&copy; JCG All Rights Reserved. &copy; Cygames, Inc.</div>
+<style>#wrapper-main-content{border-bottom:none !important;}</style>
+</div>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NH5QKCJ');</script>
+<!-- End Google Tag Manager -->
+<script src="//kitchen.juicer.cc/?color=F7mb/NA5bUA=" async></script>
+</body>
+</html>

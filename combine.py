@@ -2,10 +2,7 @@ import ast
 from archsMod import archs
 from fractions import Fraction
 
-matrixfile = open("archmatrix.txt", "r")
-
 numArchs = len(archs)
-f1 = matrixfile.readlines()
 comMatrix = []
 
 def sortSecond(val):
@@ -31,6 +28,8 @@ def initCombMat(imat):
 
 def collapseRows(iMatrix):
     i=0
+    matrixfile = open("archmatrix.txt", "r")
+    f1 = matrixfile.readlines()
     for x in f1:
         if (iMatrix[i] == 0):
             iMatrix[i] = ast.literal_eval(x)
@@ -54,6 +53,7 @@ def printInfo(iMatrix):
         for j in range(numArchs):
             classWins += iMatrix[i][j][0]
             classGames += iMatrix[i][j][1]
+        print archs[i][0] + ": " + str(classGames) + " - " + str(classWins) + " - " + str(classGames-classWins)
         winrates[i][1] = Fraction(classWins,classGames)
     winrates.sort(key = sortSecond)
     for i in range(len(winrates)):

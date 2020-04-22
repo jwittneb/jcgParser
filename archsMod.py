@@ -35,33 +35,51 @@
 #6awkc = orichalcum golem
 #6lcKI = okami
 #6auI2 = Anne
+#6mN9I = Ginger
+#6hISC = hnikar
+#6cSOc = HLOS
+#6lCCQ = angelic smite
+#6kOCS = displacer bot
+#6l--Q = castle
+#6pkkA = tempered aether
+#5-IK4 = forge weaponry
+#6t_RI = kuon
+#6qtEy = Night of the Living Dog
+#6iAbo = Evo sword
+#6pJ8Y = Wily Puck
+#6vSCy = Golden Eagle
 
 archs = [
         ["Roach", ["6lZu2"]],
-        ["Midforest", ["6lcKI"]],
-        ["Mechsword", ["6lyIY"]],
-        ["Midsword", [".2."]],
-        ["Spellboost", ["6awkS"]],
-        ["Mechrune", ["6mIGy"]],
-        ["Burn", ["6awkc"]],
-        ["Dragon", [".4."]],
+        ["Mech Forest", [".1."]],
+        ["Sword", [".2."]],
+        ["NTR Rune", ["6q8s2"]],
+        ["Spellboost", ["6t_RI"]],
+        ["Other Rune", [".3."]],
+        ["Turbo Zeus Dragon", ["6wcBA"]],
+        ["Valdain Dragon", ["6qVZA"]],
         ["Shadow", [".5."]],
-        ["Seduc Venge", ["6nWOo"]],
-        ["Vengeance", ["6nTyY"]],
-        ["Mech Blood", ["6jaxM"]],
-        ["Elana", ["6nupS"]],
-        ["Lishenna", ["6cqoo"]],
+        ["Machina Blood", ["6jiFy"]],
+        ["Other Blood", [".6."]],
+        ["Haven", [".7."]],
+        ["Portal", [".8."]],
         ["Other", [""]]
         ]
 
+archs2 = [
+         ["3 Smite", ["6lCCQ.6lCCQ.6lCCQ"]],
+         ["2 Smite", ["6lCCQ.6lCCQ"]],
+         ["1 Smite", ["6lCCQ"]],
+         ["0 Smite", [""]]]
+
 association = [
-              ["arisa", [0, 1]],
-              ["erika", [2, 3]],
-              ["isabelle", [4,5,6]],
+              ["arisa", [0, 1, 2]],
+              ["erika", [3, 4]],
+              ["isabelle", [5, 6]],
               ["rowen", [7]],
               ["luna", [8]],
-              ["urias", [9,10,11]],
-              ["eris", [12]],
-              ["yuwan", [13]],
+              ["urias", [9]],
+              ["eris", [10, 11]],
+              ["yuwan", [12]],
               ]
 

@@ -3,13 +3,10 @@
 from fractions import Fraction
 import json
 import sys
+import os
 from archsMod import archs
 
 ############## GLOBAL FILES ############
-
-datafile = open("data.txt", 'r')
-matrixfile = open("archmatrix.txt", "a+")
-top16out = open("top16out.txt", "a+")
 
 ############## CONSTANTS ###############
 
@@ -38,8 +35,8 @@ def getarch(hashval):
             if (hashval.find(ind) == -1):
                 correct = 0
         if (correct == 1):
-            if (i == 0):
-                print "https://shadowverse-portal.com/deck/" + hashval
+      #      if (i == 5):
+       #         print hashval
             return i
     # We should never get here
     print "ERROR: deck does not qualify as any archetype"
@@ -88,7 +85,7 @@ def print_arch_selection(participants):
 # This should only ever be called by createMatchTable(), it requires the datafile to be at a specific
 # point to extract the result of the "next" match
 # Match entries are of the form [Player1, Player2, Winner (either 1 or 2)]
-def getMatchEntry():
+def getMatchEntry(datafile):
     #skipping html lines to get to actual info
     for i in range(8):
         datafile.readline()
@@ -124,7 +121,7 @@ def getMatchEntry():
         return [player1, player2, 2]
 
 # Returns a table of all the matches in data.txt by going through the html (this doesnt currently include top 16).
-def createMatchTable():
+def createMatchTable(datafile):
     matchTable = []
     nextline = datafile.readline()
 
@@ -132,7 +129,7 @@ def createMatchTable():
     while (nextline.find("</html>") == -1):
         #whenever we see a match, this may have to be changed, it is a little sensitive
         if (nextline.find("onClick=") > -1):
-            matchTable.append(getMatchEntry())
+            matchTable.append(getMatchEntry(datafile))
         nextline = datafile.readline()
 
     return matchTable
@@ -206,6 +203,7 @@ def fillMatchupMatrix(matchupMatrix, playerTable, matchTable):
 
 # Output links to all the decks used, along with how many wins they got while in the top 16.
 def printAllDecks(participants, playerTable):
+    top16out = open("top16out.txt", "a+")
     wins = 4
     while (wins > -1):
         top16out.write("Wins: " + str(wins) + "\r\n")
@@ -227,6 +225,7 @@ def main():
     top16 = []
     matchupMatrix = []
 
+    datafile = open("data.txt", 'r')
     for i in range(numArchs):
         archSetWins.append(0)
         archSetLosses.append(0)
@@ -255,7 +254,7 @@ def main():
     playerTable = createTable(participants)
 
     # Make the table of matches, entires are of the form: [Player1, Player2, Winner (either 1 or 2)]
-    matchTable = createMatchTable()
+    matchTable = createMatchTable(datafile)
 
     # Cross-reference playerTable and matchTable to determine the number of wins and losses for each
     # archetype. Also updates the players with the number of wins/losses they achieved.
@@ -292,6 +291,7 @@ def main():
     print "\nNumber of each archetype hitting top 16: "
     print top16
     print "\nMatchup Matrix:"
+    matrixfile = open("archmatrix.txt", "a+")
     for i in range(numArchs):
         matrixfile.write(str(matchupMatrix[i]) + "\n")
         print archs[i][0] + ": " + str(matchupMatrix[i])
